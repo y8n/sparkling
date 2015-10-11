@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+var https = require('https'),
+	pkg = require('../package.json');
+
+var argvs = process.argv;
+
+var options = argvs[2];
+
+switch(options){
+	case undefined:
+		printHelpInfo();
+		break;
+	case '-v':
+		console.log(pkg.version);
+		break;
+	case '--version':
+		console.log(pkg.version);
+		break;
+	case '-h':
+		printHelpInfo();
+		break;
+	default:
+		if(/^\-/.test(options)){
+			printHelpInfo();
+		}else{
+			console.log(options);
+		}
+		break;
+}
+
+
+function printHelpInfo(){
+	console.log("\n  Usage:sparkling username\n");
+	console.log("  Options:\n");
+	console.log("	-v, --version 	print sparkling's version");
+}
+
+// console.log(process);
