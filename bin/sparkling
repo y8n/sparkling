@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var https = require('https'),
+	sparkling = require('../lib/sparkling'),
 	pkg = require('../package.json');
 
 var argvs = process.argv;
@@ -24,7 +25,15 @@ switch(options){
 		if(/^\-/.test(options)){
 			printHelpInfo();
 		}else{
-			console.log(options);
+            sparkling.getAllStars(options,function(stars){
+                if(stars === 0){
+                    console.log("oops~You have not got any star on GitHub.");
+                }else if(stars === 1){
+                    console.log("You have got only one star on GitHub.")
+                }else{
+                    console.log("You have got "+stars+" stars on GitHub.")
+                }
+            });
 		}
 		break;
 }
@@ -33,7 +42,7 @@ switch(options){
 function printHelpInfo(){
 	console.log("\n  Usage:sparkling username\n");
 	console.log("  Options:\n");
-	console.log("	-v, --version 	print sparkling's version");
+	console.log("	-v, --version 	print sparkling's version\n");
 }
 
 // console.log(process);
