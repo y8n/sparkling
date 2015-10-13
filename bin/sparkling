@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var https = require('https'),
-	sparkling = require('../lib/sparkling'),
+	sparkling = require('../index'),
 	pkg = require('../package.json');
 
 var argvs = process.argv;
