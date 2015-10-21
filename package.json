@@ -1,6 +1,6 @@
 {
   "name": "sparkling",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "To know how many stars you have got on GitHub.com",
   "main": "index.js",
   "scripts": {
