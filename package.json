@@ -1,13 +1,16 @@
 {
   "name": "sparkling",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "To know how many stars you have got on GitHub.com",
-  "main": "index.js",
+  "main": "lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engine": {
+    "node": ">=4.0.0"
+  },
   "bin": {
-    "sparkling":"./bin/sparkling"
+    "sparkling": "./bin/sparkling"
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/yangjiyuan/sparkling/issues"
   },
-  "homepage": "https://github.com/yangjiyuan/sparkling"
+  "homepage": "https://github.com/yangjiyuan/sparkling",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "promise": "^7.1.1",
+    "readline-sync": "^1.4.4",
+    "superman-progress": "^0.1.0"
+  }
 }
